@@ -1,0 +1,53 @@
+﻿@model MoviePlace.Models.Receipt
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Receipt</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MTitle" class="control-label"></label>
+                <input asp-for="MTitle" class="form-control" />
+                <span asp-validation-for="MTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MType" class="control-label"></label>
+                <input asp-for="MType" class="form-control" />
+                <span asp-validation-for="MType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MGenre" class="control-label"></label>
+                <input asp-for="MGenre" class="form-control" />
+                <span asp-validation-for="MGenre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MTrailer" class="control-label"></label>
+                <input asp-for="MTrailer" class="form-control" />
+                <span asp-validation-for="MTrailer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoldCopies" class="control-label"></label>
+                <input asp-for="SoldCopies" class="form-control" />
+                <span asp-validation-for="SoldCopies" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
